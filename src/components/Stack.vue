@@ -10,8 +10,8 @@ useReveal(root)
 <template>
   <section ref="root" class="stack-section" aria-labelledby="stack-title">
     <div class="section-head reveal">
-      <span class="mono dim">§ 05</span>
-      <h2 id="stack-title">Atelier / <em>the practice</em></h2>
+      <span class="mono dim">[06]</span>
+      <h2 id="stack-title">Atelier <span class="acc">/ practice</span></h2>
       <span class="mono dim">Tools, tendencies, taste</span>
     </div>
 

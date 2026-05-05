@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { projects } from '../data/projects'
 import { useReveal } from '../composables/useReveal'
+import ProjectDiagram from './ProjectDiagram.vue'
 
 const root = ref(null)
 useReveal(root)
@@ -32,12 +33,12 @@ const counts = computed(() => {
 <template>
   <section ref="root" id="work" class="work" aria-labelledby="work-title">
     <div class="section-head reveal">
-      <span class="mono dim">§ 02</span>
-      <h2 id="work-title">Selected <em>work</em></h2>
+      <span class="mono dim">[02]</span>
+      <h2 id="work-title">Selected <span class="acc">/ work</span></h2>
       <span class="mono dim">2023 — 2026</span>
     </div>
 
-    <div class="work__filter mono reveal" role="tablist" aria-label="Filter projects by domain">
+    <div class="work__filter mono reveal" role="tablist" aria-label="Filter by domain">
       <button
         v-for="f in filters"
         :key="f.key"
@@ -53,28 +54,35 @@ const counts = computed(() => {
 
     <transition-group name="proj" tag="div" class="work__list">
       <article
-        v-for="(p, i) in visible"
+        v-for="p in visible"
         :key="p.slug"
         class="project"
-        :class="{ 'project--flip': i % 2 === 1 }"
       >
         <div class="project__num">{{ p.num }}</div>
 
         <div class="project__lead">
           <div class="project__meta">
             <span>{{ p.period }}</span>
-            <span class="dot-sep">·</span>
+            <span class="slash">/</span>
             <span class="pill" :class="{ 'pill--active': p.status === 'Active' }">{{ p.status }}</span>
-            <span class="dot-sep">·</span>
+            <span class="slash">/</span>
             <span>{{ p.domain }}</span>
           </div>
+
           <h3 class="project__title">
             <template v-if="p.italic">
-              {{ p.title.replace(p.italic, '').trim() }} <em>{{ p.italic }}</em>
+              {{ p.title.replace(p.italic, '').trim() }} <span class="acc">{{ p.italic }}</span>
             </template>
             <template v-else>{{ p.title }}</template>
           </h3>
           <p class="project__tagline">{{ p.tagline }}</p>
+
+          <p v-if="p.impact" class="project__impact mono">
+            <span class="lab">Impact —</span>
+            <span class="val">{{ p.impact }}</span>
+          </p>
+
+          <ProjectDiagram v-if="p.diagram" :kind="p.diagram" />
 
           <dl class="project__stack">
             <div v-for="row in p.stack" :key="row.dt" class="project__stack-row">
@@ -82,12 +90,6 @@ const counts = computed(() => {
               <dd>{{ row.dd }}</dd>
             </div>
           </dl>
-
-          <div v-if="p.links?.length" class="project__links">
-            <a v-for="l in p.links" :key="l.href" :href="l.href" target="_blank" rel="noopener">
-              {{ l.label }} <span aria-hidden="true">↗</span>
-            </a>
-          </div>
         </div>
 
         <div class="project__story">
@@ -109,63 +111,31 @@ const counts = computed(() => {
 </template>
 
 <style scoped>
-.work__filter {
-  display: flex;
+.project__impact {
+  display: inline-flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px dashed var(--line);
-}
-.chip {
-  display: inline-flex;
   align-items: baseline;
-  gap: 0.5rem;
-  padding: 0.5rem 0.9rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
+  padding: 0.5rem 0.8rem;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
   font-family: var(--mono);
   font-size: var(--fs-mono);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
+  color: var(--text);
   text-transform: uppercase;
-  cursor: pointer;
-  transition: color 0.3s var(--ease-out),
-              border-color 0.3s var(--ease-out),
-              background 0.3s var(--ease-out);
+  align-self: flex-start;
+  max-width: 100%;
+  text-overflow: ellipsis;
 }
-.chip:hover { color: var(--text); border-color: var(--accent); }
-.chip--on {
-  color: var(--bg);
-  background: var(--accent);
-  border-color: var(--accent);
+.project__impact .lab {
+  color: var(--accent);
+  font-weight: 600;
 }
-.chip__count {
-  font-size: 9px;
-  opacity: 0.7;
-  letter-spacing: 0.04em;
-}
-
-.work__empty {
-  padding: 2rem 0;
-  font-style: italic;
-}
-
-.proj-move,
-.proj-enter-active,
-.proj-leave-active {
-  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
-}
-.proj-enter-from,
-.proj-leave-to {
-  opacity: 0;
-  transform: translateY(16px);
-}
-.proj-leave-active {
-  position: absolute;
-  width: 100%;
-}
-.work__list {
-  position: relative;
+.project__impact .val {
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 500;
 }
 </style>

@@ -7,32 +7,27 @@ useReveal(root)
 </script>
 
 <template>
-  <section ref="root" class="manifesto" aria-labelledby="manifesto-title">
-    <aside class="manifesto__label mono">
-      <div>§ 01</div>
-      <div>— Une note</div>
-      <div class="dim">— A note</div>
+  <section ref="root" class="note" aria-labelledby="note-title">
+    <aside class="note__label mono">
+      <div>[01]</div>
+      <div>— Note</div>
     </aside>
 
-    <div class="manifesto__body">
-      <h2 id="manifesto-title" class="sr-only">A note</h2>
+    <div class="note__body">
+      <h2 id="note-title" class="sr-only">Note</h2>
       <p class="reveal">
-        <span class="dropcap">I</span> build software for the markets I actually
-        live in. That means thinking in CFA francs, mobile-money rails, and
-        Francophone interfaces from the start — not retrofitting a Western
-        template after the fact, hoping the seams don't show.
+        I build software for the markets I actually live in — <span class="acc">CFA francs</span> in the schema,
+        French as the default copy, mobile money as the payment baseline. Not retrofitted
+        from a Western template. Built that way from line one.
       </p>
       <p class="reveal">
-        The work spans fintech, edtech, ride-hailing, marketplaces — anywhere
+        The work spans fintech, edtech, mobility, marketplaces — wherever
         there's a real gap between what local users need and what's actually
-        shipping. I tend to ship the whole thing: backend, frontend, native
-        mobile, infrastructure. <em>Generalist by necessity, specialist by
-        interest.</em>
+        shipping. I tend to ship the whole thing: backend, frontend, native mobile, infrastructure.
       </p>
       <p class="reveal">
         I'm not the engineer for a polished demo. I'm the one you call when
-        the demo is fine but the third invoice fails reconciliation in
-        production at 2am.
+        the demo is fine but the third invoice fails reconciliation in production at 2 AM.
       </p>
     </div>
   </section>

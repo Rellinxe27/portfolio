@@ -10,8 +10,8 @@ useReveal(root)
 <template>
   <section ref="root" id="manner" class="manner" aria-labelledby="manner-title">
     <div class="section-head reveal">
-      <span class="mono dim">§ 03</span>
-      <h2 id="manner-title">How I <em>think</em></h2>
+      <span class="mono dim">[04]</span>
+      <h2 id="manner-title">How I <span class="acc">/ think</span></h2>
       <span class="mono dim">Six rules I keep coming back to</span>
     </div>
 

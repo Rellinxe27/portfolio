@@ -10,8 +10,8 @@ useReveal(root)
 <template>
   <section ref="root" id="proof" class="proof" aria-labelledby="proof-title">
     <div class="section-head reveal">
-      <span class="mono dim">§ 04</span>
-      <h2 id="proof-title">Numbers, <em>roughly</em></h2>
+      <span class="mono dim">[05]</span>
+      <h2 id="proof-title">Numbers, <span class="acc">/ roughly</span></h2>
       <span class="mono dim">Metrics &gt; adjectives</span>
     </div>
 

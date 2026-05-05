@@ -9,6 +9,8 @@ export const projects = [
     domain: 'B2B SaaS · EdTech',
     category: 'edtech',
     tagline: 'A learning platform for African universities, where Canvas never quite fit.',
+    impact: '30 Spring services · schema-per-tenant · < 200 KB initial payload',
+    diagram: 'campus',
     beats: [
       {
         label: 'Problem',
@@ -54,6 +56,8 @@ export const projects = [
     domain: 'Mobility',
     category: 'mobility',
     tagline: 'Ride-hailing built for Abidjan, not retrofitted to it.',
+    impact: 'Cancellation rate 22% → 7% · 500+ concurrent rides on a single 8 GB box',
+    diagram: 'hopride',
     beats: [
       {
         label: 'Problem',
@@ -99,6 +103,7 @@ export const projects = [
     domain: 'Fintech · Compliance',
     category: 'fintech',
     tagline: 'Multi-tenant invoice certification for Côte d\'Ivoire\'s tax authority.',
+    impact: '6 ERP integrations live · 3 AM reconciliation, drift > 2 records pages me',
     beats: [
       {
         label: 'Problem',
@@ -144,6 +149,7 @@ export const projects = [
     domain: 'Creator tools · Fintech',
     category: 'fintech',
     tagline: 'Smart link-in-bio with mobile-money payment routing built in.',
+    impact: 'Payments fanned across Wave / Orange / MTN with one-touch creator payout',
     beats: [
       {
         label: 'Problem',
@@ -188,6 +194,7 @@ export const projects = [
     domain: 'Marketplace',
     category: 'marketplace',
     tagline: 'A two-sided service marketplace, role-aware from the first screen.',
+    impact: 'Provider drop-off cut roughly in half by moving verification post-booking',
     beats: [
       {
         label: 'Problem',
@@ -305,6 +312,143 @@ export const metrics = [
     lab: 'Honest note',
     note: 'These numbers come from staging telemetry and partner reports — not from a polished case-study deck. Some are ranges. I\'d rather show approximate truth than tidy fiction.',
     layout: 'f'
+  }
+]
+
+export const classProjects = [
+  {
+    title: 'Service Marketplace API',
+    course: 'CSE 341 — Web Services',
+    code: 'CSE 341',
+    year: 2025,
+    track: 'backend',
+    stack: ['Node.js', 'TypeScript', 'GraphQL', 'MongoDB'],
+    summary: 'GraphQL-driven API for a verified local-services marketplace — search, profiles, bookings, messaging, reviews, real-time notifications. Group project; I owned the schema and the booking-flow resolver.',
+    links: [
+      { label: 'Demo', href: 'https://youtu.be/zU6KOHst_kk' },
+      { label: 'Repo', href: 'https://github.com/BMillettMedia/CSE341-FINAL/tree/main' }
+    ]
+  },
+  {
+    title: 'Weather Dashboard with City Comparison',
+    course: 'WDD 330 — Frontend II',
+    code: 'WDD 330',
+    year: 2025,
+    track: 'frontend',
+    stack: ['Vue 3', 'OpenWeatherMap', 'Visual Crossing', 'LocalStorage'],
+    summary: 'Multi-city weather dashboard — side-by-side comparison, 5-day forecasts with charts, drag-and-drop city cards, image export, geolocation auto-fill. Shipped in a 38-hour personal sprint.',
+    links: [
+      { label: 'Demo', href: 'https://www.youtube.com/watch?v=Y2c9npMM_Q0' },
+      { label: 'Repo', href: 'https://github.com/Rellinxe27/weather-dashboard-WDD330-Final/tree/master' }
+    ]
+  },
+  {
+    title: 'PHPMotors',
+    course: 'CSE 340 — Backend I',
+    code: 'CSE 340',
+    year: 2024,
+    track: 'backend',
+    stack: ['PHP', 'MySQL', 'phpMyAdmin', 'MVC'],
+    summary: 'Full PHP/MVC web application for a fictional motor dealership — authentication, CRUD on inventory, role-based admin views. The course capstone where MVC stopped being a buzzword.',
+    links: []
+  },
+  {
+    title: 'CSS Zen Garden',
+    course: 'WDD 331 — Advanced CSS',
+    code: 'WDD 331',
+    year: 2024,
+    track: 'frontend',
+    stack: ['HTML', 'Advanced CSS', 'Group project'],
+    summary: 'Group restyle of the canonical Zen Garden — same HTML, completely different visual world. Forced you to think about CSS as design surface, not just layout.',
+    links: []
+  },
+  {
+    title: '~Scoots Motor Scooter Rental',
+    course: 'WDD 230 — Frontend I',
+    code: 'WDD 230',
+    year: 2023,
+    track: 'frontend',
+    stack: ['HTML', 'CSS', 'JavaScript', 'SASS', 'JSON', 'Fetch API'],
+    summary: 'A fictitious scooter-rental brand on Cozumel. Full multi-page site with API-fed content, SASS styling, and a fun, island-tone visual language. The first time I shipped JavaScript that talked to anything.',
+    links: [
+      { label: 'Live', href: 'https://rellinxe27.github.io/TermProject/index.html' }
+    ]
+  },
+  {
+    title: 'Cypher — Tech',
+    course: 'WDD 130 — Web Fundamentals',
+    code: 'WDD 130',
+    year: 2022,
+    track: 'frontend',
+    stack: ['HTML', 'CSS'],
+    summary: 'Personal multi-page site with a contact form. First taste of structuring web content for a real audience instead of a syllabus.',
+    links: [
+      { label: 'Live', href: 'https://mypersonalwebsite.glitch.me/' }
+    ]
+  },
+  {
+    title: 'Dry Oar',
+    course: 'WDD 130 — Web Fundamentals',
+    code: 'WDD 130',
+    year: 2022,
+    track: 'frontend',
+    stack: ['HTML', 'CSS'],
+    summary: 'Mid-semester marketing site for a fictional whitewater-rafting brand. Focused on Purpose, Audience, and a partial style guide — the brief that made "design before you code" stick.',
+    links: [
+      { label: 'Live', href: 'https://dryoarwdd130.glitch.me/' }
+    ]
+  },
+  {
+    title: 'Sudoku',
+    course: 'CIT 260 — Object-Oriented Programming',
+    code: 'CIT 260',
+    year: 2022,
+    track: 'systems',
+    stack: ['C++'],
+    summary: 'Console Sudoku — enforces row, column, and 3×3 uniqueness with a clean separation between board state and input loop. Where C++ classes started feeling natural.',
+    links: []
+  },
+  {
+    title: 'MadLib',
+    course: 'CS 124 — Intro to Software Development',
+    code: 'CS 124',
+    year: 2021,
+    track: 'systems',
+    stack: ['C++', 'File I/O'],
+    summary: 'Reads a Mad Lib template from disk, prompts for substitutes, prints the completed story. Tiny, but the first program that actually felt like a tool.',
+    links: []
+  },
+  {
+    title: 'Calendar',
+    course: 'CS 124 — Intro to Software Development',
+    code: 'CS 124',
+    year: 2021,
+    track: 'systems',
+    stack: ['C++'],
+    summary: 'Console calendar — month/year navigation and date-arithmetic from scratch. The bug-hunt that taught me about edge dates and leap years.',
+    links: []
+  },
+  {
+    title: 'Monthly Budget',
+    course: 'CS 124 — Intro to Software Development',
+    code: 'CS 124',
+    year: 2021,
+    track: 'systems',
+    stack: ['C++'],
+    summary: 'Tracks personal income/expenditure for a month and reports goal-met/missed. Boring; that was the point — get comfortable with control flow and I/O.',
+    links: []
+  },
+  {
+    title: 'Facebook — Cambridge Analytica',
+    course: 'CIT 270 — Systems Security 1',
+    code: 'CIT 270',
+    year: 2021,
+    track: 'security',
+    stack: ['Research', 'Presentation'],
+    summary: 'Group case study on the 2018 Cambridge Analytica breach — what was scraped, who got notified, and the third-party-app permission gaps Facebook had to close after.',
+    links: [
+      { label: 'Talk', href: 'https://youtu.be/s4xEIc1oXoI' }
+    ]
   }
 ]
 

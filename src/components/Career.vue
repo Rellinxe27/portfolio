@@ -10,8 +10,8 @@ useReveal(root)
 <template>
   <section ref="root" class="career" aria-labelledby="career-title">
     <div class="section-head reveal">
-      <span class="mono dim">§ 06</span>
-      <h2 id="career-title">Parcours / <em>career</em></h2>
+      <span class="mono dim">[07]</span>
+      <h2 id="career-title">Parcours <span class="acc">/ career</span></h2>
       <span class="mono dim">Abridged</span>
     </div>
 
@@ -23,9 +23,9 @@ useReveal(root)
       </li>
     </ol>
 
-    <p class="mono dim" style="margin-top: 1.4rem; font-size: 11px;">
+    <p class="mono dim" style="margin-top: 1.4rem; font-size: 11px; letter-spacing: 0.06em;">
       <span>BYU-Idaho · Applied Technology · GPA 3.4</span>
-      <span class="dot-sep">·</span>
+      <span class="slash">/</span>
       <span>BYU-Pathway · Certificate, Database (2024)</span>
     </p>
   </section>
