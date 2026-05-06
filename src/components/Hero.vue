@@ -59,11 +59,11 @@ useReveal(root)
       </a>
     </div>
 
-    <a href="#work" class="hero__scroll mono reveal">
+    <RouterLink to="/work" class="hero__scroll mono reveal">
       <span>Selected work — 2023 / 2026</span>
       <svg width="36" height="10" viewBox="0 0 36 10" fill="none" aria-hidden="true">
         <path d="M0 5 H32 M27 1 L32 5 L27 9" stroke="currentColor" stroke-width="1" fill="none"/>
       </svg>
-    </a>
+    </RouterLink>
   </section>
 </template>

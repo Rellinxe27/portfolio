@@ -2,21 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const scrolled = ref(false)
-const activeId = ref('')
-
-const sections = ['work', 'coursework', 'manner', 'proof', 'contact']
-
-const onScroll = () => {
-  scrolled.value = window.scrollY > 40
-  let current = ''
-  for (const id of sections) {
-    const el = document.getElementById(id)
-    if (!el) continue
-    const top = el.getBoundingClientRect().top
-    if (top < window.innerHeight * 0.4) current = id
-  }
-  activeId.value = current
-}
+const onScroll = () => { scrolled.value = window.scrollY > 40 }
 
 onMounted(() => {
   onScroll()
@@ -27,17 +13,16 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 <template>
   <header class="bar" :class="{ 'bar--scrolled': scrolled }">
-    <div class="bar__brand mono">
+    <RouterLink to="/" class="bar__brand mono">
       <span class="dot"></span>
       <strong>Rellinxe Boni</strong>
       <span class="dim">/ Engineer · Abidjan</span>
-    </div>
+    </RouterLink>
     <nav class="bar__nav mono">
-      <a href="#work"       :class="{ 'is-active': activeId === 'work' }">Work</a>
-      <a href="#coursework" :class="{ 'is-active': activeId === 'coursework' }">Coursework</a>
-      <a href="#manner"     :class="{ 'is-active': activeId === 'manner' }">Manner</a>
-      <a href="#proof"      :class="{ 'is-active': activeId === 'proof' }">Proof</a>
-      <a href="#contact"    :class="{ 'is-active': activeId === 'contact' }">Contact</a>
+      <RouterLink to="/work"       active-class="" exact-active-class="is-active">Work</RouterLink>
+      <RouterLink to="/coursework" active-class="" exact-active-class="is-active">Coursework</RouterLink>
+      <RouterLink to="/about"      active-class="" exact-active-class="is-active">About</RouterLink>
+      <RouterLink to="/contact"    active-class="" exact-active-class="is-active">Contact</RouterLink>
     </nav>
   </header>
 </template>
