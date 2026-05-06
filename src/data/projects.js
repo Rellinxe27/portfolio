@@ -338,6 +338,7 @@ export const classProjects = [
     stack: ['Vue 3', 'OpenWeatherMap', 'Visual Crossing', 'LocalStorage'],
     summary: 'Multi-city weather dashboard — side-by-side comparison, 5-day forecasts with charts, drag-and-drop city cards, image export, geolocation auto-fill. Shipped in a 38-hour personal sprint.',
     links: [
+      { label: 'Live', href: 'https://weather-dashboard-wdd330-final.onrender.com/' },
       { label: 'Demo', href: 'https://www.youtube.com/watch?v=Y2c9npMM_Q0' },
       { label: 'Repo', href: 'https://github.com/Rellinxe27/weather-dashboard-WDD330-Final/tree/master' }
     ]

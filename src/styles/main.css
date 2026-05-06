@@ -258,6 +258,33 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__meta-item .lab { color: var(--muted); }
 .hero__meta-item .val { font-size: 0.95rem; font-weight: 500; }
 
+.hero__cta {
+  grid-column: 1 / 13;
+  margin-top: 2.5rem;
+}
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background 0.25s, transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.btn-cv:hover {
+  background: var(--accent-d);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(200, 255, 30, 0.18);
+}
+.btn-cv svg { transition: transform 0.3s var(--ease-out); }
+.btn-cv:hover svg { transform: translateY(2px); }
+
 .hero__scroll {
   grid-column: 1 / 13;
   margin-top: 4rem;

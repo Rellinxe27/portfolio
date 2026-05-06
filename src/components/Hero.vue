@@ -50,6 +50,15 @@ useReveal(root)
       </div>
     </div>
 
+    <div class="hero__cta reveal">
+      <a href="/portfolio/rellinxe-boni-cv.pdf" download="Rellinxe-Boni-CV.pdf" class="btn-cv">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+          <path d="M6.5 1v7M3 8.5l3.5 3.5 3.5-3.5M1 12h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download CV
+      </a>
+    </div>
+
     <a href="#work" class="hero__scroll mono reveal">
       <span>Selected work — 2023 / 2026</span>
       <svg width="36" height="10" viewBox="0 0 36 10" fill="none" aria-hidden="true">

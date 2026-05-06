@@ -30,7 +30,7 @@ useReveal(root)
       </a>
       <a class="contact__link" href="tel:+22567765107">
         <span class="lab">[T]</span>
-        <span class="val">+225 0776 5107</span>
+        <span class="val">+225 0546 568 022</span>
         <span class="arrow">↗</span>
       </a>
     </div>
